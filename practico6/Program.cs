@@ -1,4 +1,6 @@
-﻿//#1
+﻿using System;
+using System.Text.RegularExpressions;
+//#1
 /*string? numero;
 int n, aux, invertido=0, resto;
 bool resultado;
@@ -140,3 +142,71 @@ while (opcion!=0){
 Console.WriteLine("Cerrado");*/
 
 //#4 Strings
+string? cadena, cadena2, concatenada, subcadena, palabra;
+int buscada;
+Console.WriteLine("Entre una cadena: ");
+cadena = Console.ReadLine();
+while ((cadena is null)||cadena==""){
+    Console.WriteLine("La cadena esta vacia");
+    Console.WriteLine("Entre una cadena: ");
+    cadena = Console.ReadLine();
+}
+Console.WriteLine("Entre otra cadena: ");
+cadena2 = Console.ReadLine();
+while ((cadena2 is null)||cadena2==""){
+    Console.WriteLine("La cadena esta vacia");
+    Console.WriteLine("Entre otra cadena: ");
+    cadena2 = Console.ReadLine();
+}
+concatenada = cadena + " " + cadena2;
+Console.WriteLine("Cadenas concatenadas: " + concatenada);
+subcadena = concatenada.Substring(5);
+Console.WriteLine("Subcadena: " + subcadena);
+int num1=2, num2= 7;
+int result= num1 + num2;
+Console.WriteLine("La suma de " + num1 + " + " + num2 + " es igual a: " + result);
+foreach (var letra in concatenada){
+    Console.WriteLine(letra);
+}
+palabra="Hola";
+buscada = concatenada.IndexOf(palabra);
+if (buscada==-1){
+    Console.WriteLine("La cadena no contiene la palabra");
+}else{
+    Console.WriteLine("La cadena contiene la palabra {0} en la posicion {1}",palabra,buscada);
+}
+Console.WriteLine("Cadena en mayuscula: " + concatenada.ToUpper());
+Console.WriteLine("Cadena en minuscula: " + concatenada.ToLower());
+Console.WriteLine("Entre una cadena separada por caracteres: ");
+cadena=Console.ReadLine();
+while ((cadena is null)||cadena==""){
+    Console.WriteLine("La cadena esta vacia");
+    Console.WriteLine("Entre una cadena: ");
+    cadena = Console.ReadLine();
+}
+Console.WriteLine("Cadena entrada: " + cadena);
+string[] cadenaConSplit=cadena.Split(" ");
+foreach (var subc in cadenaConSplit){
+    Console.WriteLine(subc);
+}
+string? a = "582", b = "2";
+Console.WriteLine("582 + 2 = " + (int.Parse(a)+int.Parse(b)));
+
+//#5
+Console.WriteLine("Entre una nueva cadena: ");
+cadena = Console.ReadLine();
+while ((cadena is null)||cadena==""){
+    Console.WriteLine("La cadena esta vacia");
+    Console.WriteLine("Entre una cadena: ");
+    cadena = Console.ReadLine();
+}
+
+bool coincidencia1 = Regex.IsMatch(cadena,@"\bhttp://\b");
+bool coincidencia2 = Regex.IsMatch(cadena,@"\bhttps://\b");
+bool coincidencia3 = Regex.IsMatch(cadena,@"\@\b");
+if (coincidencia1||coincidencia2){
+    Console.WriteLine("La cadena ingresada es una direccion web");
+}else if (coincidencia3)
+{
+    Console.WriteLine("La cadena ingresada es un correo");
+}
