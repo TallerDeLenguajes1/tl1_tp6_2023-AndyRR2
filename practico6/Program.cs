@@ -24,7 +24,7 @@ if (resultado){
     Console.WriteLine("Numero invalido");
 }*/
 
-//#2
+//#2 CalculadoraV1
 /*string? entrada1,entrada2;
 float a, b, opcion;
 Console.WriteLine("Menu:");
@@ -60,7 +60,7 @@ while (opcion!=0){
 Console.WriteLine("Cerrado");*/
 
 //#3 CalculadoraV2
-string? entrada1,entrada2;
+/*string? entrada1,entrada2;
 float a, b, opcion;
 bool resultado;
 Console.WriteLine("CalculadoraV2: ");
@@ -137,4 +137,6 @@ while (opcion!=0){
     Console.WriteLine("Otro-Cerrar");
     float.TryParse(Console.ReadLine(),out opcion);
 }
-Console.WriteLine("Cerrado");
+Console.WriteLine("Cerrado");*/
+
+//#4 Strings
